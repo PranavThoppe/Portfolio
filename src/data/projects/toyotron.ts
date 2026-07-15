@@ -2,7 +2,7 @@ import type { Project } from '../../types/project'
 
 export const toyotron: Project = {
   id: 'toyotron',
-  title: 'Toyotron',
+  title: 'Talk to Toyota',
   tagline: 'Talk to Toyota. Find your car by voice.',
   description:
     '2x first-place HackUTD 2025 project: a multi-agent Toyota shopping companion powered by NVIDIA Nemotron. Browse the catalog, compare trims, estimate financing, and book test drives through chat or voice.',

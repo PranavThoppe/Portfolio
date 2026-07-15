@@ -95,7 +95,7 @@ export function ProjectSlide({ project, index, onNotification }: ProjectSlidePro
         <div className="project-links">
           {project.link && (
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              Live demo →
+              Live App →
             </a>
           )}
           {project.github && (

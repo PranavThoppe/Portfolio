@@ -9,7 +9,7 @@ export const poker: Project = {
   tags: ['iMessage', 'Game Design', 'Swift', 'State Machines'],
   likes: '21.8K',
   link: '#',
-  github: '#',
+  instagram: 'https://www.instagram.com/poker.imsg/',
   gradient: 'linear-gradient(135deg, #1c1917 0%, #7f1d1d 100%)',
   icon: {
     src: '/apps/poker/icon.png',
