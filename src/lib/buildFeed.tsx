@@ -67,6 +67,7 @@ export function buildFeed({
             <ProjectSlide
               project={project}
               index={projectIndex - 1}
+              audienceId={audience.id}
               onNotification={onNotification}
             />
           ),

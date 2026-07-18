@@ -1,12 +1,17 @@
 import type { AudienceId } from './audience'
 
-export interface ProjectNotification {
-  appName: string
-  /** Emoji fallback, or image path like /apps/linkup/icon.png */
-  appIcon: string
+export interface ProjectNotificationCopy {
   title: string
   body: string
   delayMs?: number
+}
+
+export interface ProjectNotification extends ProjectNotificationCopy {
+  appName: string
+  /** Emoji fallback, or image path like /apps/linkup/icon.png */
+  appIcon: string
+  /** Audience-specific title/body overrides. Falls back to the default copy. */
+  byAudience?: Partial<Record<AudienceId, ProjectNotificationCopy>>
 }
 
 export interface ProjectIcon {
@@ -29,8 +34,11 @@ export interface Project {
   tags: string[]
   likes: string
   link?: string
+  /** When true, Live App tap shows a coming-soon system alert instead of navigating. */
+  comingSoon?: boolean
   github?: string
   instagram?: string
+  youtube?: string
   gradient: string
   icon?: ProjectIcon
   media?: ProjectMedia

@@ -1,17 +1,31 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { NotificationPopup } from '../notifications/NotificationPopup'
+import { resolveNotification } from '../../lib/resolveNotification'
+import type { AudienceId } from '../../types/audience'
 import type { Project } from '../../types/project'
+import { NotificationPopup } from '../notifications/NotificationPopup'
+import { SystemAlert } from '../shared/SystemAlert'
 
 interface ProjectSlideProps {
   project: Project
   index: number
+  audienceId: AudienceId
   onNotification?: () => void
 }
 
-export function ProjectSlide({ project, index, onNotification }: ProjectSlideProps) {
+export function ProjectSlide({
+  project,
+  index,
+  audienceId,
+  onNotification,
+}: ProjectSlideProps) {
   const [showNotification, setShowNotification] = useState(false)
+  const [showComingSoon, setShowComingSoon] = useState(false)
   const hasShownNotification = useRef(false)
+
+  const notification = project.notification
+    ? resolveNotification(project.notification, audienceId)
+    : undefined
 
   useEffect(() => {
     if (!showNotification) return
@@ -21,24 +35,31 @@ export function ProjectSlide({ project, index, onNotification }: ProjectSlidePro
   }, [showNotification])
 
   const showProjectNotification = () => {
-    if (!project.notification || hasShownNotification.current) return
+    if (!notification || hasShownNotification.current) return
 
     hasShownNotification.current = true
     window.setTimeout(() => {
       setShowNotification(true)
       onNotification?.()
-    }, project.notification?.delayMs ?? 1200)
+    }, notification.delayMs ?? 1200)
   }
 
   return (
     <div className="slide-content project-slide">
-      {project.notification && (
+      {notification && (
         <NotificationPopup
-          notification={project.notification}
+          notification={notification}
           isVisible={showNotification}
           onDismiss={() => setShowNotification(false)}
         />
       )}
+
+      <SystemAlert
+        title="Coming Soon"
+        message={`${project.title} isn't live yet. Check back soon.`}
+        isVisible={showComingSoon}
+        onDismiss={() => setShowComingSoon(false)}
+      />
 
       <motion.div
         className="project-visual"
@@ -93,11 +114,20 @@ export function ProjectSlide({ project, index, onNotification }: ProjectSlidePro
         </div>
 
         <div className="project-links">
-          {project.link && (
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              Live App →
-            </a>
-          )}
+          {project.link &&
+            (project.comingSoon ? (
+              <button
+                type="button"
+                className="project-link-btn"
+                onClick={() => setShowComingSoon(true)}
+              >
+                Live App →
+              </button>
+            ) : (
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                Live App →
+              </a>
+            ))}
           {project.github && (
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               GitHub →
@@ -106,6 +136,11 @@ export function ProjectSlide({ project, index, onNotification }: ProjectSlidePro
           {project.instagram && (
             <a href={project.instagram} target="_blank" rel="noopener noreferrer">
               Instagram →
+            </a>
+          )}
+          {project.youtube && (
+            <a href={project.youtube} target="_blank" rel="noopener noreferrer">
+              YouTube →
             </a>
           )}
         </div>

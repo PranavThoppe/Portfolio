@@ -16,10 +16,28 @@ export const toyotron: Project = {
     alt: 'Toyota logo',
   },
   notification: {
-    appName: 'Toyotron',
+    appName: 'Talk to Toyota',
     appIcon: '/apps/toyotron/icon.png',
     title: 'Voice Assistant',
     body: 'Tell me your budget and I will find your perfect Toyota.',
     delayMs: 1200,
+    byAudience: {
+      recruiter: {
+        title: 'HackUTD 1st place ×2',
+        body: 'Multi-agent voice shopping, shipped in a weekend.',
+      },
+      engineer: {
+        title: 'Agent handoff',
+        body: 'Budget → trim → finance. Your move, orchestrator.',
+      },
+      friend: {
+        title: 'Test drive booked?',
+        body: "Or are you still 'just looking.'",
+      },
+      classmate: {
+        title: 'Team project flex unlocked',
+        body: 'Voice AI + multi-agent, not another CRUD app.',
+      },
+    },
   },
 }

@@ -9,6 +9,7 @@ export const poker: Project = {
   tags: ['iMessage', 'Game Design', 'Swift', 'State Machines'],
   likes: '21.8K',
   link: '#',
+  comingSoon: true,
   instagram: 'https://www.instagram.com/poker.imsg/',
   gradient: 'linear-gradient(135deg, #1c1917 0%, #7f1d1d 100%)',
   icon: {
@@ -19,7 +20,17 @@ export const poker: Project = {
     appName: 'Poker',
     appIcon: '/apps/poker/icon.png',
     title: 'Your turn',
-    body: 'Call, raise, or fold before everyone starts typing "bro".',
-    delayMs: 1300,
+    body: 'Bluff in the chat or fold forever.',
+    delayMs: 1200,
+    byAudience: {
+      recruiter: {
+        title: 'Coming soon',
+        body: 'Turn-based game designed for iMessage constraints.',
+      },
+      engineer: {
+        title: 'State machine waiting',
+        body: 'Next action required.',
+      },
+    },
   },
 }

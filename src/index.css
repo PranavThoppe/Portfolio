@@ -596,7 +596,7 @@ body {
 
 .notification-popup {
   position: fixed;
-  top: 62px;
+  top: 16px;
   left: 16px;
   right: 16px;
   z-index: 30;
@@ -706,6 +706,82 @@ body {
 
 .project-links a:hover {
   color: var(--accent);
+}
+
+.project-link-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.project-link-btn:hover {
+  color: var(--accent);
+}
+
+.system-alert-backdrop {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 24px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.system-alert {
+  background: rgba(242, 242, 247, 0.94);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  color: #000;
+  max-width: 270px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+
+.system-alert-content {
+  padding: 20px 16px 16px;
+}
+
+.system-alert-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.system-alert-message {
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.system-alert-action {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-top: 0.5px solid rgba(60, 60, 67, 0.29);
+  color: #007aff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 12px 16px;
+  width: 100%;
+}
+
+.system-alert-action:active {
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .project-likes {

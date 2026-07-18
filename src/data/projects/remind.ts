@@ -21,5 +21,27 @@ export const remind: Project = {
     title: 'Reminder',
     body: "You said you'd finish this portfolio. Suspiciously on brand.",
     delayMs: 1200,
+    byAudience: {
+      recruiter: {
+        title: 'Interview prep',
+        body: "You said you'd shortlist strong product builders.",
+      },
+      engineer: {
+        title: 'TODO',
+        body: "Refactor this portfolio later. Narrator: they didn't.",
+      },
+      friend: {
+        title: 'Reminder',
+        body: "Tell Pranav his jokes are mid. Or don't.",
+      },
+      classmate: {
+        title: 'Reminder',
+        body: "Office hours aren't the only way to ship.",
+      },
+      'imessage-user': {
+        title: 'Reminder from future you',
+        body: "Open Re-mind before you forget why you're here.",
+      },
+    },
   },
 }

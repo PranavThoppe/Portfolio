@@ -43,7 +43,7 @@ export function IntroSlide({ data, bio = data.bio, tagline = data.tagline }: Int
           </div>
           <div>
             <strong>∞</strong>
-            <span>coffee</span>
+            <span>fun</span>
           </div>
         </div>
 

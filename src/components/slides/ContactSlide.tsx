@@ -53,7 +53,7 @@ export function ContactSlide({ data, screenTime, title, sub }: ContactSlideProps
         </div>
 
         <p className="contact-footer">
-          Built with irony · {data.name} · scroll responsibly
+          Built with irony · scroll responsibly
         </p>
       </motion.div>
     </div>
