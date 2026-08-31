@@ -9,7 +9,7 @@ export const toyotron: Project = {
   tags: ['Next.js', 'NVIDIA Nemotron', 'Multi-Agent AI', 'Voice AI', 'HackUTD'],
   likes: '9.4K',
   link: 'https://talk-to-toyota.vercel.app',
-  github: 'https://github.com/anbguye/hackutd-Toyota-Toyotron',
+  github: 'https://github.com/PranavThoppe/TalkToToyota-HackUTD2025',
   gradient: 'linear-gradient(135deg, #EB0A1E 0%, #1a1a1a 100%)',
   icon: {
     src: '/apps/toyotron/icon.png',
@@ -23,7 +23,7 @@ export const toyotron: Project = {
     delayMs: 1200,
     byAudience: {
       recruiter: {
-        title: 'HackUTD 1st place ×2',
+        title: 'HackUTD',
         body: 'Multi-agent voice shopping, shipped in a weekend.',
       },
       engineer: {

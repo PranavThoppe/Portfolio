@@ -13,7 +13,7 @@ export function ContactSlide({ data, screenTime, title, sub }: ContactSlideProps
   const guiltMessage =
     minutes >= 2
       ? "Okay, you've been here a while. Hire me?"
-      : "You made it to the end. That's rare."
+      : "You made it to the end!"
   const contactTitle = title ?? guiltMessage
   const contactSub =
     sub ?? "You've scrolled through my entire portfolio. The least you can do is say hi."
@@ -53,7 +53,7 @@ export function ContactSlide({ data, screenTime, title, sub }: ContactSlideProps
         </div>
 
         <p className="contact-footer">
-          Built with irony · scroll responsibly
+          Scroll responsibly
         </p>
       </motion.div>
     </div>
