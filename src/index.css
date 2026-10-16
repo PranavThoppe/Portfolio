@@ -212,9 +212,39 @@ body {
   padding: 0;
 }
 
+.like-btn,
+.share-btn {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.like-btn.liked .action-icon {
+  color: #ff2d55;
+  animation: like-pop 0.3s ease;
+}
+
+@keyframes like-pop {
+  50% {
+    transform: scale(1.35);
+  }
+}
+
 .action-icon {
   font-size: 24px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.share-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.share-icon svg {
+  width: 26px;
+  height: 26px;
 }
 
 .action-count {
